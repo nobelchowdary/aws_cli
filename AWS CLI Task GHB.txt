@@ -35,7 +35,7 @@ AWS EC2 creating the security group before launching the instance
 
 configure in the putty the amazon linux volume
 By partitioning
-By creating Volume
+By formating the created Volume
 By mounting on to the device
 
     1  df -h
