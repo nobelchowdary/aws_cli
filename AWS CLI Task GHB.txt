@@ -1,0 +1,54 @@
+AWS EC2 creating the security group before launching the instance
+
+
+>> aws --ver
+>> aws authorize
+>> aws help
+
+
+>> aws ec2 help
+	create-security-group = useful to create the security group
+
+>> aws ec2 create-security-group help
+	create-security-group
+	--description <value>
+	--group-name <value>
+
+>> aws ec2 create-security-group --description my_security --group-name my_security
+	Reuslts with some group id 
+	"GroupId": "sg-0c548504afb28b3f4"
+
+>> aws ec2 authorize-security-group-ingress --group-id sg-0de4c77225bf32b37 --cidr 0.0.0.0/0 --protocol tcp --port 22
+	It wil return the access to the security group which we have done
+
+>> aws ec2 describe-security-groups
+	Here you can check your security group
+
+>> aws ec2 run-instances --image id xxxxx --instance-type t2.micro
+	Check out the instance launched on the web ui aws console
+
+>> aws ec2 create-volume --size 2 --availability-zone ap-south-1a
+	create a volume
+
+>> aws ec2 attach-volume --device /dev/sdf --instance-id i-075a3635b32f5307f --volume-id vol-0c84f67b040399b54
+	attach volume
+
+configure in the putty the amazon linux volume
+By partitioning
+By creating Volume
+By mounting on to the device
+
+    1  df -h
+    2  mkdir mountt
+    3  fdisk -l
+    4  fdisk /dev/xvdf
+    5  fdisk -l
+    6  mkfs.ext4 /dev/xvdf1
+    7  fdisk -l
+    8  fd -h
+    9  history
+   10  df -h
+   11  mount /dev/xvdf1 /mountt
+   12  mount /dev/xvdf1 mountt
+   13  df -h
+   14  history
